@@ -1,0 +1,132 @@
+<html>
+<head>
+<title> Лабораторная работа 3.1 ИТ</title>
+</head>
+<body>
+<script>
+var timer;
+
+window.onload = function(){
+	
+	for(var i=0;i<document.getElementsByClassName("buttons").length;i++){
+		var menu = document.getElementsByClassName("buttons")[i];
+		var sub = menu.getElementsByClassName("sub")[0];
+		var headline = menu.getElementsByClassName("headline")[0];
+		headline.onmouseover = function(){
+			var headline_ref = event.target;
+			var menu_ref = headline_ref.parentNode;
+			var sub_ref = menu_ref.getElementsByClassName("sub")[0];
+			headline_ref.style.backgroundColor = "rgba(255,255,255,0.3)";
+			sub_ref.style.display = "";
+		}
+		headline.onmouseout = function(){
+			var headline_ref = event.target;
+			var menu_ref = headline_ref.parentNode;
+			var sub_ref = menu_ref.getElementsByClassName("sub")[0];
+			timer = setTimeout(hide,50,headline_ref,sub_ref);
+		}
+		
+		sub.onmouseover = function(){
+			clearTimeout(timer);
+		}
+		
+		sub.onmouseout = function(){
+			var sub_ref = event.currentTarget;
+			var headline_ref = sub_ref.parentNode.getElementsByClassName("headline")[0];
+			var sub_ref = menu_ref.getElementsByClassName("sub")[i];
+			timer = setTimeout(hide,50,headline_ref,sub_ref);
+		}
+		
+		for(var j = 0; j < sub.getElementsByTagName("span").length;j++){
+			sub.getElementsByTagName("span")[j].onmouseover = function(){
+				event.currentTarget.style.backgroundColor = "rgba(255,255,255,0.3)";
+			}
+			sub.getElementsByTagName("span")[j].onmouseout = function(){
+				event.currentTarget.style.backgroundColor = "";
+			}
+		}
+		
+	}
+}
+
+function hide(headline_ref,sub_ref){
+	headline_ref.style.backgroundColor = "";
+	sub_ref.style.display = "none"
+}
+</script>
+<style>
+body{
+	margin:2em;
+}
+div.main{
+	background-color:red;
+	height: 2.5em;
+	width: 600;
+	color: white;
+}
+div.buttons{
+	height: 2.5em;
+	line-height: 2.5em;
+	display:inline-block;
+	width:100;
+	text-align: center;
+	cursor:hand;
+	float:left;
+}
+div.sub{
+	position:relative;
+	background-color:red;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+}
+span{
+	display:block;
+}
+</style>
+<div class="main">
+	<div class="buttons">
+		<span class="headline">Понедельник</span>
+		<div class="sub" style="display:none">
+			<span>Англ</span>
+		</div>
+	</div>
+	<div class="buttons">
+		<span class="headline">Вторник</span>
+		<div class="sub" style="display:none">
+			<span>МЛИТА</span>
+			<span>Вышмат</span>
+			<span>ООП</span>
+		</div>
+	</div>
+	<div class="buttons">
+		<span class="headline">Среда</span>
+		<div class="sub" style="display:none">
+			<span>ЭЭИС</span>
+			<span>ЭЭИС лк 1/2</span>
+		</div>
+	</div>
+	<div class="buttons">
+		<span class="headline">Четверг</span>
+		<div class="sub" style="display:none">
+			<span>Вышмат лк</span>
+			<span>ООП лк</span>
+		</div>
+	</div>
+	<div class="buttons">
+		<span class="headline">Пятница</span>
+		<div class="sub" style="display:none">
+			<span>СиАОД лк</span>
+			<span>МЛИТА лк</span>
+			<span>ИТ лк</span>
+		</div>
+	</div>
+	<div class="buttons">
+		<span class="headline">Суббота</span>
+		<div class="sub" style="display:none">
+			<span>СиАОД</span>
+			<span>ИТ</span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

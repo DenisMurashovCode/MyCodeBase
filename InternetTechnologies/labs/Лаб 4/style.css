@@ -1,0 +1,27 @@
+.buttons
+{
+    height: 500px;
+    background-color: chartreuse;
+}
+#pictureBox
+{
+    
+    background-image: url(Kolya.jpg);
+    width : 370px;
+    height: 500px;
+    background-size:contain;
+}
+
+#pictureBox1
+{
+    
+    background-image: url(Kolya1.jpg);
+    width : 370px;
+    height: 500px;
+    background-size:contain;
+}
+table
+{
+    margin-left: 30%;
+    margin-top: 10%;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Лабораторная работа 2.3</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        
+        <style>
+        
+            
+           body {
+    background-image: url(img/bg1.jpg);
+               background-size: cover;
+               border: 3px solid transparent;
+}
+            
+            
+            body:hover {
+    background-image: url(img/bg1.jpg);
+               background-size: cover;
+               border: 3px solid red;
+                
+                
+                
+                
+}
+            
+    </style>
+        
+    </head>
+
+    <body>
+        
+        
+        
+        <script>
+            function sq(elem) {
+                var side = elem.value;
+                var sqrt = side * side;
+                document.getElementById("square").value = sqrt;
+                
+            }
+            function cube(){
+                var elem = document.getElementById("side").value;
+                var side = elem.value;
+                var result = side*side*side;
+                document.getElementById("square").value = result;
+            }
+            
+  }
+        </script>
+        
+        <form>
+        <h1>Вычисление площади</h1>
+        <p>Автоматически</p>
+        
+        
+        
+        
+           
+            <p>
+                Сторона:
+                <input id="side" type="text" onmousemove="sq(this);" autocomplete="off" />
+                <br />
+            </p>
+
+            <p lang="ru">
+                Площадь:
+                <input id="square" type="text"  readonly />
+            </p>
+            
+            <p>
+                <input id="square" type="button" value="Квадрат" onclick="cube()"/>
+            </p>
+        </form>
+        
+        
+        
+        
+    </body>
+</html>

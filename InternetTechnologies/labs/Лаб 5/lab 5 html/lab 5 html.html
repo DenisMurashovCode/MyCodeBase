@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <title>Лабораторая работа №2.2</title>
+        <style type="text/css">
+            a.button {
+                display: inline-block;
+                text-decoration: none;
+                color: #fff;
+                width: 5em;
+                text-align: center;
+                margin-bottom: 1em;
+                padding: 0.7em 1.5em;
+                border: 1px solid rgb(80, 32, 0);
+                border-radius: 10%;
+                background: rgb(3, 234, 255) linear-gradient(rgb(83, 210, 253), rgb(0, 234, 255) 80%);
+                box-shadow: 0 6px rgb(86, 38, 6), 0 3px 15px rgba(0, 0, 0, 0.4),
+                    inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 3px rgba(255, 255, 255, 0.5);
+            }
+            .button:hover {
+                background: rgb(8, 59, 227) linear-gradient(rgb(24, 122, 215), rgb(26, 26, 88) 80%);
+                box-shadow: 0 6px rgb(214, 108, 37);
+            }
+            .button:active {
+                background: rgb(25, 30, 120) linear-gradient(rgb(25, 82, 120) 20%, rgb(104, 41, 167));
+                box-shadow: none;
+                -webkit-transform: translate(0, 4px);
+                transform: translate(0, 4px);
+            }
+            .lol1 {
+                margin-top: 30vh;
+            }
+            .lol2{
+                margin-top: 33vh;
+            }
+        </style>
+        <script>
+            var started = false;
+            stop1 = false;
+            stop2 = true;
+            ru = false;
+            delay = 200;
+            imageNum = 1; 
+            imageNum1 = 8;
+            theImages = new Array();
+            theImages1 = new Array();
+
+            for (i = 1; i < 13; i++) {
+                theImages[i] = new Image();
+                theImages[i].src = "img/s" + i + ".gif";
+                theImages1[i] = new Image();
+                theImages1[i].src = "img/s" + i + ".gif";
+            }
+
+            function animate() {
+                document.animation1.src = theImages[imageNum].src;
+                document.animation2.src = theImages1[imageNum1].src;
+                if(imageNum == 8 && ru == false){
+                    stop1 = true;
+                    stop2 = false;
+
+                }
+                if(imageNum1 == 8 && ru == true){
+                    stop2 = true;
+                    stop1 = false;
+                }
+                if(stop1 == false && stop2 == true) 
+                {
+                    imageNum++;
+                    imageNum1 = imageNum1;
+                    ru = false;
+                }
+                if(stop2 == false && stop1 == true) 
+                {
+                    imageNum1++;
+                    imageNum = imageNum;
+                    ru = true;
+                }
+                if (imageNum > 12) {
+                    imageNum = 1;
+                }
+                if (imageNum1 > 12) {
+                    imageNum1 = 1;
+                }
+
+            }
+            function slower() {
+                delay += 10;
+                if (delay > 4000) delay = 4000;
+            }
+            function faster() {
+                delay -= 10;
+                if (delay < 0) delay = 0;
+            }
+            function stop() {
+                started = false;
+            }
+            function start() {
+                if (!started) {
+                    started = true;
+                    animate();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="lol1" align="center">
+            <img
+                name="animation1"
+                class="displayed"
+                width="800"
+                height="120"
+                src="img/s1.gif"
+                alt="[Анимация]"
+                onLoad="if (started)
+                            setTimeout('animate()', delay);"
+            />
+            <div>
+                <a href="#" class="button" onclick="start()">Старт</a>
+                <a href="#" class="button" onclick="faster()">Быстрее</a><br />
+                <a href="#" class="button" onclick="stop();">Стоп</a>
+                <a href="#" class="button" onclick="slower()">Медленнее</a>
+            </div>
+            <img
+            name="animation2"
+            class="displayed"
+            width="800"
+            height="120"
+            src="img/s8.gif"
+            alt="[Анимация]"
+            onLoad="if (started)
+                        setTimeout('animate()', delay);"
+            />
+
+        </div>
+    </body>
+</HTML>

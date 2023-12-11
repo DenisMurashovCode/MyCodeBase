@@ -1,0 +1,35 @@
+
+h1{
+    text-align: center;
+}
+.fio{
+    text-align: right;
+}
+.fio1{
+    Line-height: 2px;
+    text-align: right;
+}
+.text{
+    margin-left: 70px;
+}
+
+.history{
+    background-color: #9EA3C6;
+    height: 450px;
+    padding: 10px;
+}
+.his{
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    text-shadow: 3px 3px 3px blue;
+    border: 4px dotted blue;
+    border-radius: 25px;
+}
+.text-history{
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    line-height: 30px;
+    border-right: 4px solid blue;
+}
