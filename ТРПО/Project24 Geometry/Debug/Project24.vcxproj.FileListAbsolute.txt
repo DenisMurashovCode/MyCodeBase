@@ -1,0 +1,3 @@
+D:\Program Files\Visual Studio Projects\source\repos\Project24\Debug\Project24.exe
+C:\Users\denis\Desktop\ДЗ СибГУТИ\2 семестр\ТРПО\Project24 Geometry\Debug\Project24.exe
+C:\Users\denis\OneDrive\Рабочий стол\ДЗ СибГУТИ\1 курс\2 семестр\ТРПО\Project24 Geometry\Debug\Project24.exe

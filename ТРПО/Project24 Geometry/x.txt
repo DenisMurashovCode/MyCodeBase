@@ -1,0 +1,5 @@
+circle(6 -2,3)
+cirjkcle(5 2,4)
+circle(5p 2,1)
+triangle(2 3,5 8,7 3,2 3)
+triangle(5 4,9 7,9 4,5 4)
